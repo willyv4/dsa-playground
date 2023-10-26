@@ -54,18 +54,16 @@ class Tree {
 
   numGreater(x) {
     if (!this.root) return 0;
-
-    let arr = [];
+    let sum = 0;
     let stack = [this.root];
 
     while (stack.length) {
       const { val, children } = stack.pop();
-
-      if (val > x) arr.push(val);
+      if (val > x) sum++;
       children.forEach((child) => stack.push(child));
     }
 
-    return arr.length;
+    return sum;
   }
 }
 
@@ -99,5 +97,6 @@ const myTree = createTree();
 console.log("values in tree", myTree.traverse());
 console.log("summed values", myTree.sumValues());
 console.log("even number count", myTree.countEvens());
+console.log("greater than x", myTree.numGreater(3));
 
 module.exports = { Node, Tree };
