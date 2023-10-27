@@ -93,7 +93,7 @@ const createTree = () => {
 };
 
 const myTree = createTree();
-
+console.log("The Treem", myTree);
 console.log("values in tree", myTree.traverse());
 console.log("summed values", myTree.sumValues());
 console.log("even number count", myTree.countEvens());
