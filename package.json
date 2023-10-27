@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "test-tree": "jest tree/tree.test.js",
+    "test-binary": "jest tree/binaryTree.test.js"
+  },
   "dependencies": {
     "jest": "^29.7.0"
   }
