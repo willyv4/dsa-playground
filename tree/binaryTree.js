@@ -29,7 +29,6 @@ class BinaryTree {
     }
 
     serializeNode(this.root);
-
     return result.filter((val) => val !== "null");
   }
 
@@ -187,7 +186,7 @@ class BinaryTree {
       !this.findNode(this.root, node1) ||
       !this.findNode(this.root, node2)
     ) {
-      return null; // One or both of the nodes don't exist in the tree.
+      return null;
     }
 
     function findLCA(node, nodeA, nodeB) {
@@ -241,11 +240,19 @@ const createBinaryTree = (size) => {
   return new BinaryTree(root);
 };
 
-const myBinaryTree = createBinaryTree(10 - 1);
+const myBinaryTree = createBinaryTree(5 - 1);
 const string = BinaryTree.serialize(myBinaryTree);
 const newTree = BinaryTree.deserialize(string);
-const myTree = newTree.traverse();
 
-console.log("tree values", myTree, "size", myTree.length);
+console.log(
+  "tree values",
+  newTree.traverse(),
+  "size",
+  newTree.traverse().length
+);
+console.log("Min Depth", newTree.minDepth());
+console.log("MaxDepth", newTree.maxDepth());
+console.log("Max Sum", newTree.maxSum());
+console.log("Next Larger value: 4", newTree.nextLarger(4));
 
 module.exports = { BinaryTree, Node };
